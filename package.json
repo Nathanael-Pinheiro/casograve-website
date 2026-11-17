@@ -1,0 +1,12 @@
+{
+  "name": "caso-grave-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "check": "node --check src/main.js && node --check scripts/build.mjs && node scripts/check-build.mjs"
+  }
+}

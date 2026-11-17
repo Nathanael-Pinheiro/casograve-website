@@ -1,0 +1,63 @@
+{
+  "origin": "https://casograve.com.br",
+  "youtube": "https://youtube.com/@casograve",
+  "channelId": "UChjDQpfacCuRNPFIJqy04sQ",
+  "instagram": "https://www.instagram.com/caso.grave/",
+  "email": "nathan.casograve@gmail.com",
+  "whatsapp": {
+    "number": "+55 (22) 99204-3162",
+    "url": "https://wa.me/5522992043162"
+  },
+  "metrics": {
+    "subscribers": null,
+    "views": null,
+    "videos": null
+  },
+  "mediaKit": null,
+  "community": [
+    {
+      "name": "Bastidores do Caso Grave",
+      "quickLabel": "Bastidores",
+      "platform": "WhatsApp",
+      "icon": "chat",
+      "description": "Acompanhe as novidades e veja o que acontece antes de o vídeo ir ao ar.",
+      "cta": "Entrar nos bastidores",
+      "url": "https://chat.whatsapp.com/B6R47kaVIYB67vpDWDiAi0"
+    },
+    {
+      "name": "Ofertas Caso Grave",
+      "quickLabel": "Ofertas",
+      "platform": "WhatsApp",
+      "icon": "tag",
+      "description": "Um grupo para quem procura ofertas de instrumentos e equipamentos musicais.",
+      "cta": "Entrar no grupo de ofertas",
+      "url": "https://chat.whatsapp.com/DVdfWbUQHVo7sJqBORrp9q"
+    },
+    {
+      "name": "Seja membro do canal",
+      "quickLabel": "Seja membro",
+      "quickIcon": "users",
+      "platform": "YouTube",
+      "icon": "youtube",
+      "description": "Conheça o programa de membros do Caso Grave no YouTube.",
+      "cta": "Ver o programa de membros",
+      "url": "https://www.youtube.com/channel/UChjDQpfacCuRNPFIJqy04sQ/join"
+    }
+  ],
+  "featured": [
+    {"id": "XlegFzHIICg", "title": "Gastei 2K no Tagima TW 73 Pra dar pau no Fender Ultra de 20K"},
+    {"id": "8poEd-2nlbg", "title": "Preamp GUYKER no Tagima TW 73, dá pau em FENDER?"},
+    {"id": "SBs7StGtmVg", "title": "Por que MÉDICOS tocam de Fender e MÚSICOS de Tagima?"},
+    {"id": "fynmZS10Qf8", "title": "Por que eu desisti de viver de música (e foi a melhor decisão)"},
+    {"id": "0gm8CnKCiFc", "title": "Testei a JBL BandBox Trio no Contrabaixo: O QUE ACONTECEU?"}
+  ],
+  "tagima": {
+    "components": ["Pré-amplificador", "Placa de controle", "Knobs concêntricos"],
+    "episodes": [
+      {"id": "8poEd-2nlbg", "label": "Teste do pré-amplificador Guyker"},
+      {"id": "XlegFzHIICg", "label": "Instalação do circuito ativo"},
+      {"id": "-gVvNGDqIGI", "label": "O que os upgrades ensinaram", "title": "Gastei R$ 2.029 no Tagima TW-73: 5 Verdades sobre Upgrades (Valeu a Pena?)"}
+    ],
+    "url": "https://www.youtube.com/@casograve/search?query=Tagima%20Ultra"
+  }
+}

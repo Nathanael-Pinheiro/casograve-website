@@ -1,0 +1,44 @@
+name: Atualizar vídeos do Caso Grave
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: caso-grave-youtube-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+      - name: Consultar RSS dos vídeos longos
+        run: python3 scripts/update-videos.py
+      - name: Verificar build
+        run: |
+          npm run build
+          npm run check
+      - name: Publicar alterações no branch conectado ao Pages
+        env:
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          if git diff --quiet -- data/videos.json; then
+            echo "Nenhuma alteração no cache de vídeos."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/videos.json
+          git commit -m "Atualiza vídeos recentes do Caso Grave"
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
