@@ -2,6 +2,10 @@
 
 Landing page de `casograve.com.br`. HTML, CSS e JavaScript sem bibliotecas no navegador. O build não instala dependências e recria `dist/` do zero. Essa é a única pasta entregue pelo Cloudflare Pages.
 
+## Versão e releases
+
+A versão inicial é **1.0.0**. A tag `v1.0.0` identifica o código publicado no Cloudflare Pages em 18/11/2026. Consulte o [changelog](CHANGELOG.md) para o registro da versão e o [guia de versionamento](VERSIONING.md) para o fluxo de branches, tags e rollback.
+
 ## Prévia
 
 Na pasta que contém este README, com Node.js 22 ou superior:
