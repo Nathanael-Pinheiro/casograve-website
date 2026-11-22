@@ -209,5 +209,22 @@
       <div class="footer-end"><small>© {{year}} Caso Grave. Todos os direitos reservados.</small><a href="privacidade.html">Política de privacidade</a><a href="#inicio">Voltar ao topo {{icon:up}}</a></div>
     </div>
   </footer>
+
+  <dialog class="welcome-modal" id="welcome-modal" aria-modal="true" aria-labelledby="welcome-title" aria-describedby="welcome-message">
+    <div class="welcome-content">
+      <button class="welcome-close" type="button" aria-label="Fechar boas-vindas" data-welcome-close autofocus>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <img class="welcome-logo" src="assets/images/logo.webp" width="102" height="60" alt="" decoding="async">
+      <p class="eyebrow welcome-kicker">BEM-VINDO AO CASO GRAVE</p>
+      <h2 id="welcome-title">Toda a baixaria começa aqui!</h2>
+      <p class="welcome-message" id="welcome-message">Você chegou ao lugar certo para quem vive o contrabaixo. Reviews, histórias, equipamentos e toda a baixaria do mundo da música. Escolha por onde quer começar!</p>
+      <div class="welcome-actions">
+        <a class="button" href="{{youtube}}" target="_blank" rel="noopener noreferrer" data-welcome-close>{{icon:youtube}} Assistir no YouTube {{icon:external}}</a>
+        <a class="button button-secondary" href="{{backstage}}" target="_blank" rel="noopener noreferrer" data-welcome-close>{{icon:chat}} Entrar nos Bastidores 🎸 {{icon:external}}</a>
+        <button class="button welcome-continue" type="button" data-welcome-close>Continuar no site {{icon:down}}</button>
+      </div>
+    </div>
+  </dialog>
 </body>
 </html>

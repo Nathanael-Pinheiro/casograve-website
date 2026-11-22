@@ -241,6 +241,29 @@ h2 span{color:var(--accent)}
   .format-copy,.community-card{padding:19px 21px 22px}
 }
 @media(max-width:350px){.hero h1{font-size:47px}.featured-side{grid-template-columns:1fr}}
+
+.welcome-modal:not([open]){display:none}
+.welcome-modal{width:540px;max-width:calc(100% - 32px);max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);margin:auto;padding:0;overflow:auto;overscroll-behavior:contain;color:var(--white);background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px;box-shadow:0 24px 80px #0006}
+.welcome-modal::backdrop{background:rgb(0 0 0 / .65)}
+.welcome-modal[open]{animation:welcome-enter .25s ease-out}
+.welcome-modal[open]::backdrop{animation:welcome-backdrop .25s ease-out}
+.welcome-content{position:relative;padding:clamp(22px,5vw,36px)}
+.welcome-close{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:44px;height:44px;padding:0;color:var(--muted);background:transparent;border:1px solid transparent;border-radius:3px;cursor:pointer}
+.welcome-close:hover{color:var(--accent);border-color:var(--line)}
+.welcome-close .icon{width:22px;height:22px}
+.welcome-logo{width:102px;height:60px;object-fit:contain;object-position:left;filter:invert(1)}
+.welcome-kicker{margin-top:18px;color:var(--accent);font-size:.65rem;letter-spacing:.1em}
+.welcome-modal h2{margin-top:12px;font-size:clamp(36px,7.5vw,54px);line-height:.98;overflow-wrap:break-word}
+.welcome-message{margin-top:18px;color:var(--muted);font-size:.9rem;line-height:1.7}
+.welcome-actions{display:grid;gap:10px;margin-top:24px}
+.welcome-actions .button{width:100%;min-height:52px;font-family:inherit;font-size:.84rem;text-transform:none;letter-spacing:0;cursor:pointer}
+.welcome-actions .button .icon{flex-shrink:0}
+.welcome-actions .button-secondary:hover{border-color:var(--accent)}
+.welcome-actions .welcome-continue{min-height:48px;color:var(--muted);background:transparent;border-color:transparent}
+.welcome-continue:hover{color:var(--white);background:var(--card);border-color:var(--line)}
+@keyframes welcome-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes welcome-backdrop{from{opacity:0}to{opacity:1}}
+
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 }

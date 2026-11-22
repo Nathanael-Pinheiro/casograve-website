@@ -16,6 +16,12 @@ O log do Cloudflare Pages de **18/11/2026** registra o build, as checagens e a p
 
 Uma tag registra a versão do código. A publicação do site continua pelo fluxo do Cloudflare Pages ligado ao branch `main`: enviar um commit a esse branch pode disparar um novo deploy, inclusive quando a mudança é somente de documentação.
 
+## Release local: 1.1.0
+
+A versão `1.1.0` adiciona somente o popup de boas-vindas e sua integração mínima, incluindo o esclarecimento sobre `sessionStorage` na política de privacidade. O trabalho fica em `feature/welcome-popup`, preservando `main`, o commit de documentação da v1.0.0 e a tag original. A tag anotada `v1.1.0` identifica a release validada localmente; ela não afirma que essa versão já está publicada.
+
+Os testes e as diferenças de build estão registrados em [documentacao/validacao-v1.1.0.md](documentacao/validacao-v1.1.0.md). Envie a branch para revisão e integre em `main` somente quando a publicação for autorizada. Não mova `v1.0.0` nem `v1.1.0` para acompanhar novos commits.
+
 ## Desenvolvimento
 
 - `main`: código estável destinado à produção. O workflow de vídeos continua no branch padrão.
@@ -37,8 +43,8 @@ Para criar uma tag, substitua `SHA_DO_DEPLOY_VALIDADO` e ajuste a versão:
 ```sh
 git status --short
 git show --no-patch SHA_DO_DEPLOY_VALIDADO
-git tag --list 'v1.1.0'
-git tag -a v1.1.0 SHA_DO_DEPLOY_VALIDADO -m "Caso Grave v1.1.0"
+git tag --list 'v1.2.0'
+git tag -a v1.2.0 SHA_DO_DEPLOY_VALIDADO -m "Caso Grave v1.2.0"
 ```
 
 Se a tag já existir, confira o alvo em vez de recriá-la. Se a release registra um deploy de produção e seu SHA não puder ser comprovado ou não existir no clone, suspenda a criação até recuperar a referência correta.
@@ -67,6 +73,6 @@ Se a produção precisar voltar, confirme no Cloudflare Pages qual deploy anteri
 
 ## Próxima funcionalidade: promoções de instrumentos
 
-Comece em `feature/promocoes-instrumentos`, a partir do `main` estável (ou de `develop`, se ela já estiver em uso). Trate uma seção nova compatível como candidata a `1.1.0`.
+Comece em `feature/promocoes-instrumentos`, a partir do `main` estável (ou de `develop`, se ela já estiver em uso). Depois da integração da v1.1.0, trate uma seção nova compatível como candidata a `1.2.0`.
 
 Antes de implementar, teste OpenSERP e n8n fora do site de produção e defina o formato do catálogo, os critérios de deduplicação e validade de ofertas e como sinalizar links de afiliados. Valide preços, links e expiração com dados de teste. A seção deve saber ficar indisponível ou usar um último catálogo válido se a coleta falhar. Mantenha as credenciais fora do Git e do build publicado, confira o layout móvel e teste a falha da integração sem afetar a navegação atual. A entrada dessa seção na produção depende de revisão e autorização próprias.

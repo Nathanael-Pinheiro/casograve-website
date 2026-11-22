@@ -2,6 +2,22 @@
 
 Este arquivo registra as mudanças relevantes do site oficial do Caso Grave. As entradas seguem a estrutura do Keep a Changelog, e as versões seguem SemVer.
 
+## [1.1.0] - 2026-11-22
+
+Release local de desenvolvimento, sem publicação automática.
+
+### Adicionado
+
+- Popup de boas-vindas sobre a landing page, com a identidade visual existente e opções para assistir no YouTube, entrar nos Bastidores 🎸 ou continuar no site.
+- Abertura dos links oficiais em nova aba, com fechamento imediato do popup e preservação da aba original.
+- Fechamento por X, Escape e clique externo; foco contido, restauração do foco e bloqueio da rolagem do fundo enquanto o modal está aberto.
+- Memória de fechamento por sessão com `sessionStorage`, sem interromper o site se o armazenamento estiver indisponível.
+- Testes de navegador sem novas dependências, incluindo responsividade, falhas simuladas e comparação visual com a v1.0.0.
+
+### Alterado
+
+- Política de privacidade atualizada apenas para descrever a memória de sessão do popup.
+
 ## [1.0.0] - 2026-11-18
 
 Marco inicial de versionamento do site Caso Grave. A tag `v1.0.0` registra o commit `37b7e9132cca59586528b860dbf46709814233e6`, publicado em produção no Cloudflare Pages em 18/11/2026. Esta entrada registra as funcionalidades já presentes nesse deploy.

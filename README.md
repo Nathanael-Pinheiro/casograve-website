@@ -4,7 +4,7 @@ Landing page de `casograve.com.br`. HTML, CSS e JavaScript sem bibliotecas no na
 
 ## Versão e releases
 
-A versão inicial é **1.0.0**. A tag `v1.0.0` identifica o código publicado no Cloudflare Pages em 18/11/2026. Consulte o [changelog](CHANGELOG.md) para o registro da versão e o [guia de versionamento](VERSIONING.md) para o fluxo de branches, tags e rollback.
+A versão atual é **1.1.0**, com o popup de boas-vindas, preparada como release local. A tag `v1.0.0` continua identificando o código publicado no Cloudflare Pages em 18/11/2026. Consulte o [changelog](CHANGELOG.md) para o registro das versões e o [guia de versionamento](VERSIONING.md) para o fluxo de branches, tags e rollback.
 
 ## Prévia
 
@@ -35,6 +35,16 @@ Abra **http://127.0.0.1:4173/**. No Windows, use `npm.cmd` no lugar de `npm` se 
 Após editar o conteúdo ou a configuração, rode o build novamente. Os links rápidos usam os mesmos destinos do cabeçalho, da comunidade e do contato. Para também exibir os números do canal nessa faixa, informe os três valores públicos confirmados em `metrics`. Para adicionar episódios, use `tagima.episodes`. O campo `mediaKit` deve ficar vazio até haver um link publicado. Se mudar o tratamento de dados ou adicionar analytics, revise a política de privacidade antes de publicar.
 
 O WhatsApp comercial fica em `whatsapp`, no arquivo `data/site.json`. Atualize o número formatado e o link `https://wa.me/` juntos. Os grupos de Bastidores e Ofertas ficam em `community` e usam seus próprios links.
+
+O popup aparece na página inicial uma vez por sessão, após ser fechado. Seus links reutilizam `youtube` e o convite da entrada **Bastidores do Caso Grave** em `community`, sem alterar os botões existentes. A chave `casograve:welcome:v1:closed` no `sessionStorage` guarda apenas o fechamento; se o armazenamento estiver bloqueado, o site continua utilizável, mas o popup poderá reaparecer ao recarregar. Para repetir a primeira visita durante o desenvolvimento, use uma nova sessão ou remova somente essa chave nas ferramentas do navegador.
+
+Para executar os testes de interação e responsividade do popup, depois do build:
+
+```sh
+npm run test:welcome
+```
+
+O teste usa o Chrome ou Edge já instalado, sem adicionar dependências. Se necessário, configure `CHROME_PATH` com o caminho do executável. Ele cria um perfil isolado em `.local/`, usa a porta local `4191` e bloqueia DNS externo nesse perfil. Confira a [validação da v1.1.0](documentacao/validacao-v1.1.0.md) para os cenários testados e a comparação com a v1.0.0.
 
 O script opcional `python scripts/prepare-images.py` usa Pillow para regenerar as imagens do site a partir dos originais. O build e o deploy usam as cópias já prontas. Barlow Condensed e Inter são servidas localmente; as licenças SIL OFL acompanham os arquivos.
 

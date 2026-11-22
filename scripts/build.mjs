@@ -120,9 +120,13 @@ const community = site.community.map(group => `<article class="community-card">
   <a class="text-link" href="${https(group.url)}" ${external}>${escapeHtml(group.cta)} ${icon('external')}</a>
 </article>`).join('\n');
 const origin = new URL(site.origin).origin;
+const backstage = site.community.find(group => group.name === 'Bastidores do Caso Grave');
+if (!backstage || new URL(backstage.url).origin !== 'https://chat.whatsapp.com') {
+  throw new Error('O popup precisa do convite existente de Bastidores do Caso Grave.');
+}
 const brand = '<a class="brand" href="{{home}}" aria-label="Caso Grave — início"><span class="brand-mark"><img src="assets/images/logo.webp" alt="" width="340" height="200"></span><span class="brand-name" aria-hidden="true">Caso<br>Grave</span></a>';
 const data = {
-  origin: escapeHtml(origin), youtube: https(site.youtube), instagram: https(site.instagram), email: escapeHtml(site.email),
+  origin: escapeHtml(origin), youtube: https(site.youtube), backstage: https(backstage.url), instagram: https(site.instagram), email: escapeHtml(site.email),
   whatsappNumber: escapeHtml(site.whatsapp.number), whatsappUrl,
   brand, latest, featured, channelMetrics, quickLinks, series: https(site.tagima.url), components, episodes, community,
   mediaKit: site.mediaKit ? '<a class="text-link" href="' + https(site.mediaKit) + '" ' + external + '>Ver mídia kit ' + icon('external') + '</a>' : '',
